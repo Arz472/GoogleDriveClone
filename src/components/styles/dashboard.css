@@ -1,0 +1,93 @@
+.Navbar {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+ {
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.folder-button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+  width: 150px;
+  height: 50px;
+}
+
+.modal {
+  display: block; /* Show the modal */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Adjust as necessary */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+  width: calc(100% - 16px); /* Adjust input width considering padding */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.folder-button button {
+  /* Add button styling here */
+}

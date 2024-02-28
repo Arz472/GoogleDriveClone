@@ -20,6 +20,10 @@ form {
 
 h2 {
   margin-bottom: 20px;
+  color: #007bff;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 input {
