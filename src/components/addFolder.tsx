@@ -3,6 +3,7 @@ import './styles/addFolder.css';
 import { database } from '/Users/ahmadreza/sem2Projects/googledriveclone/src/firebase.js';
 import { addDoc, query, onSnapshot, CollectionReference, DocumentData, where } from 'firebase/firestore'; 
 import { useUserAuth } from "../context/UserAuthContext";
+import { useNavigate } from 'react-router-dom';
 
 interface Folder {
     id: string;
@@ -15,6 +16,7 @@ function AddFolder() {
     const [folderName, setFolderName] = useState<string>('');
     const [folders, setFolders] = useState<Folder[]>([]);
     const { user } = useUserAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
@@ -56,6 +58,10 @@ function AddFolder() {
         setFolderName('');
     };
 
+    const handleFolderClick = (folderId: string) => {
+        navigate(`/user/folder/${folderId}`); // Adjust the path as needed
+    };
+
     return (
         <div>
             <div className="folder-button">
@@ -86,7 +92,7 @@ function AddFolder() {
             </div>
             <div className="folders-display">
                 {folders.map(folder => (
-                    <div key={folder.id} className="folder">
+                    <div key={folder.id} className="folder" onClick={() => handleFolderClick(folder.id)}>
                         <span>{folder.name}</span>
                     </div>
                 ))}

@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, addDoc } from "firebase/firestore"; // Add addDoc import
+import { getFirestore, collection, addDoc } from "firebase/firestore"; 
+import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
@@ -16,13 +17,16 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
+const storage = getStorage(app);
+
 export const database = {
   folders: collection(firestore, 'folders'),
   files: collection(firestore, 'files'),
 }
 export const auth = getAuth(app);
+export const storageService = storage;
 
-// Function to add data to folders collection
+
 export const addFolder = async (folderData) => {
   try {
     const docRef = await addDoc(database.folders, folderData);
@@ -32,7 +36,7 @@ export const addFolder = async (folderData) => {
   }
 };
 
-// Function to add data to files collection
+
 export const addFile = async (fileData) => {
   try {
     const docRef = await addDoc(database.files, fileData);
