@@ -7,6 +7,9 @@ function Navbar() {
   const handleProfile = () => {
     navigate('/');
   };
+  const handleDash = () => {
+    navigate('/user');
+  };
 
   return (
     <div className="Navbar">
@@ -14,6 +17,9 @@ function Navbar() {
       <div className="nav-links">
       <button type="submit" onClick={handleProfile}>
         Log Out
+      </button>
+      <button type="submit" onClick={handleDash}>
+        Dashboard
       </button>
       </div>
     </div>

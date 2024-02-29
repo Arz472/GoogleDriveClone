@@ -89,5 +89,20 @@
 }
 
 .folder-button button {
-  /* Add button styling here */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+  width: 150px;
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  width: 220px;
+  justify-content: flex-end;
+  margin: 10px;
 }
