@@ -1,0 +1,32 @@
+.upload,
+.fillout,
+.idk {
+  margin: 20px;
+}
+
+.fillout {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.fillout input[type="text"] {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.fillout button {
+  margin-top: 5px;
+  padding: 5px 10px;
+}
+
+.idk a {
+  display: block;
+  margin-bottom: 5px;
+  color: blue;
+  text-decoration: none;
+}
+
+.idk a:hover {
+  text-decoration: underline;
+}

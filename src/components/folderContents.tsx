@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 import { storageService } from '/Users/ahmadreza/sem2Projects/googledriveclone/src/firebase.js';
+import './styles/file.css';
 
 function FolderContents() {
     const { folderId } = useParams();
@@ -64,11 +65,11 @@ function FolderContents() {
     }, [fetchFiles]);
 
     return (
-        <div>
+        <div className="upload">
             <input type="file" onChange={handleFileChange} disabled={uploading} />
             {uploading && <p>Uploading...</p>}
             {isModalOpen && (
-                <div>
+                <div className="fillout">
                     <input
                         type="text"
                         placeholder="Enter new file name"
@@ -79,7 +80,7 @@ function FolderContents() {
                     <button onClick={() => setIsModalOpen(false)}>Cancel</button>
                 </div>
             )}
-            <div>
+            <div className="idk">
                 {files.map((file, index) => (
                     <div key={index}>
                         <a href={file.url} target="_blank" rel="noopener noreferrer">{file.name}</a>
